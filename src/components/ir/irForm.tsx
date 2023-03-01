@@ -157,20 +157,6 @@ export function IRForm() {
 
 				setIr(output);
 				setNeedClear(!needClear);
-
-				let fileName = generateName(finalValues.name, finalValues.maxMismatch, finalValues.maxGap, finalValues.minLen, finalValues.maxLen);
-
-				var filePath = "F:\\350\\IR\\src\\helpers";
-				var file = new File([filePath], 'IUPACpal.txt');
-				const data = await uploadFileCallBack(dnaFile, "out_" + fileName) as any;
-				console.log(data.data.link);
-				if (!isUsingFileInput) {
-					file = new File([filePath], 'input.txt');
-					const data2 = await uploadFileCallBack(dnaFile, "in_" + fileName) as any;
-					console.log(data2.data.link);
-				}
-
-				console.log("got\n" + output);
 				updateNotification({
 					id: 'load-data',
 					color: 'teal',
@@ -178,6 +164,60 @@ export function IRForm() {
 					message: 'Check the Inverted Repeat we found',
 					autoClose: 2000,
 				});
+
+				let fileName = generateName(finalValues.name, finalValues.maxMismatch, finalValues.maxGap, finalValues.minLen, finalValues.maxLen);
+
+				var filePath = "F:\\350\\IR\\src\\helpers";
+				// var file = new File([filePath], 'IUPACpal.txt');
+				var file = new File([output], 'IUPACpal.txt');
+				console.log("here...");
+
+				try {
+					const data = await uploadFileCallBack(file, "out_" + fileName) as any;
+					console.log(data.data.link);
+					console.log("output lekha sesh");
+				} catch (e: any) {
+					console.log('in error output');
+
+					showNotification({
+						id: 'error',
+						title: "Error in writing output file to firebase",
+						message: e,
+						color: "red",
+						autoClose: 1500,
+					});
+				}
+
+				if (!isUsingFileInput) {
+					try {
+
+						// file = new File([filePath], 'input.txt');
+						var file = new File([newContent], 'input.txt');
+						const data2 = await uploadFileCallBack(file, "in_" + fileName) as any;
+						console.log(data2.data.link);
+					} catch (e: any) {
+						console.log('in error input');
+
+						showNotification({
+							id: 'error',
+							title: "Error in writing input file to firebase",
+							message: e,
+							color: "red",
+							autoClose: 1500,
+						});
+					}
+
+				}
+
+
+				// if (!isUsingFileInput) {
+				// 	file = new File([filePath], 'input.txt');
+				// 	const data2 = await uploadFileCallBack(dnaFile, "in_" + fileName) as any;
+				// 	console.log(data2.data.link);
+				// }
+
+				console.log("got\n" + output);
+
 			} catch (error: any) {
 				let msg = "There is an error in";
 				if (isUsingFileInput) {
