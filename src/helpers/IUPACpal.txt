@@ -1,0 +1,1341 @@
+Inverted Repeat of: F:\350\IR\src\helpers\input.txt
+Sequence name: seq0
+Sequence length is: 1000
+Start at position: 1
+End at position: 1000
+Minimum length of Inverted Repeat is: 2
+Maximum length of Inverted Repeat is: 10
+Maximum gap between elements is: 0
+Number of mismatches allowed in IR: 60
+
+
+
+Inverted Repeats:
+2        tgaggccgg       10
+         |  |  | |
+19       atccgagac       11
+(Length = 9, Gap = 0 , Mismatch = 5)
+
+5        gg        6
+         ||
+8        cc        7
+(Length = 2, Gap = 0 , Mismatch = 0)
+
+6        gccggcagag       15
+             |    |
+25       atcacaatcc       16
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+6        gcc        8
+         |||
+11       cgg        9
+(Length = 3, Gap = 0 , Mismatch = 0)
+
+9        ggcagagcct       18
+         |        |
+28       cttatcacaa       19
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+15       gcctaacact       24
+          | |   | |
+34       agtaagctta       25
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+16       cctaacacta       25
+            |     |
+35       cagtaagctt       26
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+19       aacactattc       28
+         |     ||||
+38       tcacagtaag       29
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+22       actattcgaa       31
+          | | |   |
+41       cgctcacagt       32
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+30       aatgacactc       39
+           |    | |
+49       acatcaggcg       40
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+31       atgacactcg       40
+          ||     ||
+50       gacatcaggc       41
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+32       tgacactcgc       41
+                  |
+51       ggacatcagg       42
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+37       ctcgcggact       46
+            |     |
+56       acaccggaca       47
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+42       ggactacagg       51
+          |      ||
+61       tcaccacacc       52
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+53       cacaccactc       62
+               || |
+72       agcctctgtg       63
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+61       tcgtgtctcc       70
+         |        |
+80       aagggtacag       71
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+65       gtctccgaca       74
+            |    ||
+84       tgtaaagggt       75
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+72       acatgggaaa       81
+         |  || || |
+91       taaacactgt       82
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+81       atgtcacaaa       90
+           |      |
+100      atctaaacat       91
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+82       tgtcacaaat       91
+             |    |
+101      gatctaaaca       92
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+87       caaatacaaa       96
+            |   | |
+106      cacttgatct       97
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+90       atacaaatct       99
+               | ||
+109      cgccacttga      100
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+98       ctagttcacc      107
+            |   | |
+117      ctacccatcg      108
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+99       tagttcaccg      108
+         |  |     |
+118      actacccatc      109
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+101      gttcaccgct      110
+         | | |  | |
+120      cgactaccca      111
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+106      ccgctaccca      115
+         | |   |  |
+125      gtcagcgact      116
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+110      tacccatcag      119
+         |   ||   |
+129      acttgtcagc      120
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+111      acccatcagc      120
+         |   |    |
+130      tacttgtcag      121
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+120      cgactgttca      129
+         | | |    |
+139      gataaagtct      130
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+127      tcatctgaaa      136
+           |      |
+146      ctttccagat      137
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+128      catctgaaat      137
+              |   |
+147      cctttccaga      138
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+143      tttccacttt      152
+          ||      |
+162      caaataccta      153
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+144      ttccacttta      153
+               |  |
+163      ccaaatacct      154
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+148      actttatcca      157
+         |     |  |
+167      ttcgccaaat      158
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+149      ctttatccat      158
+                  |
+168      attcgccaaa      159
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+154      tccataaacc      163
+               || |
+173      cctctattcg      164
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+155      ccataaaccg      164
+         |    |   |
+174      gcctctattc      165
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+158      taaaccgctt      167
+                  |
+177      caagcctcta      168
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+159      aaaccgctta      168
+             ||   |
+178      ccaagcctct      169
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+164      gcttatctcc      173
+           ||   | |
+183      ataacccaag      174
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+172      ccgaacccaa      181
+           ||     |
+191      ccctacttat      182
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+173      cgaacccaat      182
+          |     |||
+192      accctactta      183
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+174      gaacccaata      183
+                  |
+193      gaccctactt      184
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+178      ccaatattca      187
+                  |
+197      tccggaccct      188
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+185      tcatcccagg      194
+          | | | |||
+204      ggcacgctcc      195
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+189      cccaggcctc      198
+         |        |
+208      gtagggcacg      199
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+190      ccaggcctcg      199
+          ||  ||  |
+209      agtagggcac      200
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+193      ggcctcgcac      202
+                | |
+212      agtagtaggg      203
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+197      tcgcacggga      206
+              |   |
+216      cataagtagt      207
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+200      cacgggatga      209
+           ||   | |
+219      aagcataagt      210
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+204      ggatgatgaa      213
+          | |   | |
+223      gccaaagcat      214
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+205      gatgatgaat      214
+            | |   |
+224      ggccaaagca      215
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+207      tgatgaatac      216
+         ||  |  | |
+226      acggccaaag      217
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+213      atacgaaacc      222
+          || |   ||
+232      gattccacgg      223
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+215      acgaaaccgg      224
+             ||   |
+234      aagattccac      225
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+221      ccggcacctt      230
+         |        |
+240      gtaaacaaga      231
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+229      ttagaacaaa      238
+          |||   | |
+248      gatcaaatgt      239
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+232      gaacaaatgt      241
+          | | | | |
+251      atagatcaaa      242
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+237      aatgtaaact      246
+            |  | ||
+256      gccccataga      247
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+240      gtaaactaga      249
+         ||       |
+259      caggccccat      250
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+241      taaactagat      250
+             |  | |
+260      tcaggcccca      251
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+246      tagatacccc      255
+           | ||  ||
+265      ggccatcagg      256
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+251      accccggact      260
+         |        |
+270      tacctggcca      261
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+254      ccggactacc      263
+                |||
+273      ctatacctgg      264
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+260      taccggtcca      269
+          | ||    |
+279      ttcgcgctat      270
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+261      accggtccat      270
+            |  | ||
+280      cttcgcgcta      271
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+262      ccggtccata      271
+         |    |   |
+281      gcttcgcgct      272
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+264      ggtccatatc      273
+         |    |   |
+283      cagcttcgcg      274
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+265      gtccatatcg      274
+            |  | ||
+284      tcagcttcgc      275
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+266      tccatatcgc      275
+                 ||
+285      ttcagcttcg      276
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+267      ccatatcgcg      276
+           |      |
+286      tttcagcttc      277
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+271      atcgcgcttc      280
+                 ||
+290      agcttttcag      281
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+279      tcgacttttc      288
+            |   |||
+298      gcgtaccaag      289
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+285      tttcgaacca      294
+           | |   ||
+304      gtaccggcgt      295
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+287      tcgaaccatg      296
+         |  |     |
+306      acgtaccggc      297
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+288      cgaaccatgc      297
+         |        |
+307      gacgtaccgg      298
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+290      aaccatgcgg      299
+          ||     ||
+309      ctgacgtacc      300
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+293      catgcggcca      302
+         |  |    ||
+312      gccctgacgt      303
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+295      tgcggccatg      304
+          ||||   ||
+314      gcgccctgac      305
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+302      atgcagtccc      311
+            | | | |
+321      gctggccgcg      312
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+303      tgcagtcccg      312
+            |    ||
+322      cgctggccgc      313
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+304      gcagtcccgc      313
+            | || ||
+323      acgctggccg      314
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+305      cagtcccgcg      314
+           |   |  |
+324      aacgctggcc      315
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+307      gtcccgcgcc      316
+                 ||
+326      ttaacgctgg      317
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+311      cgcgccggtc      320
+         |        |
+330      gtcattaacg      321
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+312      gcgccggtcg      321
+         ||     | |
+331      cgtcattaac      322
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+315      ccggtcgcaa      324
+            |  | ||
+334      actcgtcatt      325
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+317      ggtcgcaatt      326
+          ||    | |
+336      acactcgtca      327
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+321      gcaattactg      330
+             |    |
+340      gcaaacactc      331
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+330      gctcacaaac      339
+         | |     ||
+349      ccatgtggtg      340
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+337      aacgtggtgt      346
+           |  |  ||
+356      gaggtcgcca      347
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+340      gtggtgtacc      349
+             |  | |
+359      ttagaggtcg      350
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+341      tggtgtaccg      350
+            | | | |
+360      gttagaggtc      351
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+348      ccgctggaga      357
+         | | | |  |
+367      gcccagcgtt      358
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+351      ctggagattg      360
+           |  | | |
+370      agcgcccagc      361
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+352      tggagattgc      361
+                  |
+371      cagcgcccag      362
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+357      attgcgaccc      366
+         |||  | | |
+376      taagccagcg      367
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+358      ttgcgacccg      367
+                 ||
+377      gtaagccagc      368
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+359      tgcgacccgc      368
+              |   |
+378      ggtaagccag      369
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+363      acccgcgacc      372
+          ||  |   |
+382      gggtggtaag      373
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+366      cgcgaccgaa      375
+           |  |   |
+385      taggggtggt      376
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+375      atggtgggga      384
+         |  |     |
+394      tcactggtat      385
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+376      tggtggggat      385
+           |||   ||
+395      ctcactggta      386
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+377      ggtggggata      386
+          | | |   |
+396      gctcactggt      387
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+386      atggtcactc      395
+            |     |
+405      gcgccaatcg      396
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+387      tggtcactcg      396
+         | |    | |
+406      agcgccaatc      397
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+389      gtcactcgct      398
+                | |
+408      ttagcgccaa      399
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+393      ctcgctaacc      402
+         ||       |
+412      gatgttagcg      403
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+394      tcgctaaccg      403
+          |   || ||
+413      cgatgttagc      404
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+395      cgctaaccgc      404
+          ||||    |
+414      ccgatgttag      405
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+397      ctaaccgcga      406
+             |  | |
+416      acccgatgtt      407
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+401      ccgcgattgt      410
+         |||      |
+420      ggcaacccga      411
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+403      gcgattgtag      412
+              |   |
+422      taggcaaccc      413
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+409      gtagcccaac      418
+          || |    |
+428      aatagctagg      419
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+412      gcccaacgga      421
+           |  |  ||
+431      tagaatagct      422
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+414      ccaacggatc      423
+         | | |  |||
+433      gttagaatag      424
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+416      aacggatcga      425
+           |      |
+435      gggttagaat      426
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+417      acggatcgat      426
+          |  |    |
+436      ggggttagaa      427
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+421      atcgataaga      430
+          |       |
+440      cattggggtt      431
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+429      gattggggtt      438
+         | |      |
+448      cgactggtca      439
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+438      tactggtcag      447
+               |  |
+457      tatgggaccc      448
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+446      agcccagggt      455
+           | |    |
+465      aggcgcgtta      456
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+447      gcccagggta      456
+           ||  |  |
+466      aaggcgcgtt      457
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+450      cagggtattg      459
+                  |
+469      tgaaaggcgc      460
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+451      agggtattgc      460
+             |   ||
+470      gtgaaaggcg      461
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+452      gggtattgcg      461
+              || ||
+471      agtgaaaggc      462
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+453      ggtattgcgc      462
+         |  | |   |
+472      cagtgaaagg      463
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+464      gaaagtgact      473
+            | |  ||
+483      tcatgataga      474
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+467      agtgactaga      476
+                  |
+486      gattcatgat      477
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+468      gtgactagat      477
+            |     |
+487      tgattcatga      478
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+471      actagatagt      480
+          | |   |||
+490      cgttgattca      481
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+475      gatagtactt      484
+            || |  |
+494      aattcgttga      485
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+480      tacttagttg      489
+                  |
+499      tgtctaattc      490
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+483      ttagttgctt      492
+               | ||
+502      ctgtgtctaa      493
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+485      agttgcttaa      494
+          |       |
+504      acctgtgtct      495
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+496      ctgtgtccac      505
+           |    |||
+515      agctaccgtg      506
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+499      tgtccacgtg      508
+             |    |
+518      cttagctacc      509
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+502      ccacgtgcca      511
+                | |
+521      ttacttagct      512
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+504      acgtgccatc      513
+                |||
+523      gattacttag      514
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+506      gtgccatcga      515
+          |   ||  |
+525      tagattactt      516
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+510      catcgattca      519
+          |     | |
+529      atcttagatt      520
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+512      tcgattcatt      521
+         |  |     |
+531      acatcttaga      522
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+515      attcattaga      524
+              |   |
+534      cccacatctt      525
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+519      attagattct      528
+          |  |  | |
+538      cagccccaca      529
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+526      tctacacccc      535
+         |    ||  |
+545      acgcctgcag      536
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+529      acaccccgac      538
+         | |  | |||
+548      tttacgcctg      539
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+533      cccgacgtcc      542
+          || |  | |
+552      tgggtttacg      543
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+534      ccgacgtccg      543
+         |   |    |
+553      gtgggtttac      544
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+536      gacgtccgca      545
+         | |  ||  |
+555      ccgtgggttt      546
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+544      catttgggtg      553
+                  |
+563      aattgttacc      554
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+547      ttgggtgcca      556
+                | |
+566      gggaattgtt      557
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+552      tgccattgtt      561
+                 ||
+571      ctttcgggaa      562
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+557      ttgttaaggg      566
+          |    |  |
+576      gaatcctttc      567
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+564      gggctttcct      573
+          |    || |
+583      gcgtttagaa      574
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+568      tttcctaaga      577
+             |  | |
+587      tcgtgcgttt      578
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+572      ctaagatttg      581
+          ||      |
+591      tatgtcgtgc      582
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+573      taagatttgc      582
+          |       |
+592      ctatgtcgtg      583
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+576      gatttgcgtg      585
+           |      |
+595      gaactatgtc      586
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+580      tgcgtgctgt      589
+                  |
+599      cactgaacta      590
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+581      gcgtgctgta      590
+              ||  |
+600      acactgaact      591
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+593      aagtcacact      602
+             | |  |
+612      cctggaggca      603
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+595      gtcacactac      604
+               || |
+614      agcctggagg      605
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+603      acggaggtcc      612
+           |  ||  |
+622      ccctgccgag      613
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+606      gaggtccgag      615
+            |     |
+625      tcgccctgcc      616
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+608      ggtccgagcc      617
+          |  || | |
+627      gctcgccctg      618
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+613      gagccgtccc      622
+                  |
+632      aattagctcg      623
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+614      agccgtcccg      623
+              ||  |
+633      gaattagctc      624
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+617      cgtcccgctc      626
+           ||    ||
+636      agagaattag      627
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+619      tcccgctcga      628
+            | ||  |
+638      taagagaatt      629
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+621      ccgctcgatt      630
+             ||  ||
+640      cctaagagaa      631
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+628      attaagagaa      637
+                | |
+647      gctactccct      638
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+635      gaatccctca      644
+          ||      |
+654      ttttctagct      645
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+637      atccctcatc      646
+          |     |||
+656      aattttctag      647
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+639      ccctcatcga      648
+         || | |  ||
+658      ggaattttct      649
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+645      tcgatctttt      654
+         |       ||
+664      aaagccggaa      655
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+649      tcttttaagg      658
+          |  ||  ||
+668      ggggaaagcc      659
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+651      ttttaaggcc      660
+                  |
+670      gtggggaaag      661
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+661      gaaaggggtg      670
+         |   | || |
+680      ccaacgccgc      671
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+662      aaaggggtgc      671
+              |  ||
+681      gccaacgccg      672
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+663      aaggggtgcg      672
+         | ||     |
+682      tgccaacgcc      673
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+665      ggggtgcgcc      674
+              |   |
+684      tatgccaacg      675
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+666      gggtgcgccg      675
+         |     |  |
+685      ctatgccaac      676
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+671      cgccgcaacc      680
+           | | |  |
+690      cagtcctatg      681
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+673      ccgcaaccgt      682
+          ||  |   |
+692      agcagtccta      683
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+674      cgcaaccgta      683
+           |  | | |
+693      tagcagtcct      684
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+681      gtatcctgac      690
+                  |
+700      ggggacttag      691
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+683      atcctgacga      692
+           ||     |
+702      ccggggactt      693
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+691      gattcagggg      700
+         |     | ||
+710      cccgtacgcc      701
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+693      ttcaggggcc      702
+             |    |
+712      cgcccgtacg      703
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+694      tcaggggccg      703
+            |||   |
+713      tcgcccgtac      704
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+696      aggggccgca      705
+          | |   |||
+715      cctcgcccgt      706
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+698      gggccgcatg      707
+           |  ||  |
+717      ttcctcgccc      708
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+701      ccgcatgccc      710
+          |  | |  |
+720      tgtttcctcg      711
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+702      cgcatgcccg      711
+           ||     |
+721      atgtttcctc      712
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+711      gctcctttgt      720
+                 ||
+730      ttgtactcca      721
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+717      ttgtacctca      726
+         |  | |  ||
+736      actacgttgt      727
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+722      cctcatgttg      731
+            | || ||
+741      atggaactac      732
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+724      tcatgttgca      733
+               |  |
+743      taatggaact      734
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+731      gcatcaaggt      740
+          |   |   |
+750      ggagctgtaa      741
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+733      atcaaggtaa      742
+          ||   |  |
+752      caggagctgt      743
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+737      aggtaatgtc      746
+                 ||
+756      gttgcaggag      747
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+743      tgtcgaggac      752
+                 ||
+762      ttcttcgttg      753
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+747      gaggacgttg      756
+           ||| |  |
+766      taccttcttc      757
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+756      gcttcttcca      765
+              |   |
+775      aaggaagaat      766
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+757      cttcttccat      766
+          ||| | | |
+776      taaggaagaa      767
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+766      taagaaggaa      775
+               || |
+785      gcaagaccct      776
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+775      atcccagaac      784
+                | |
+794      ctcacaatag      785
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+777      cccagaacga      786
+            ||    |
+796      tactcacaat      787
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+778      ccagaacgat      787
+            ||  | |
+797      atactcacaa      788
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+786      ataacactca      795
+            ||    |
+805      gtgtggccat      796
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+787      taacactcat      796
+           ||||   |
+806      cgtgtggcca      797
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+790      cactcatacc      799
+          |  || |||
+809      tttcgtgtgg      800
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+796      taccggtgtg      805
+           |  |   |
+815      tcgatctttc      806
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+802      tgtgctttct      811
+           |||   ||
+821      ttacgttcga      812
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+804      tgctttctag      813
+         |   | | ||
+823      aattacgttc      814
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+808      ttctagcttg      817
+          |||    ||
+827      gagaaattac      818
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+810      ctagcttgca      819
+          |  |||  |
+829      aagagaaatt      820
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+812      agcttgcatt      821
+            |  | ||
+831      aaaagagaaa      822
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+831      aagactctga      840
+            | ||  |
+850      cattcagttt      841
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+839      gatttgactt      848
+           |      |
+858      tgatggctca      849
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+843      tgacttactc      852
+          |       |
+862      cccctgatgg      853
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+846      cttactcggt      855
+          |       |
+865      cagcccctga      856
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+853      ggtagtcccc      862
+               |  |
+872      tgcagcgcag      863
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+856      agtccccgac      865
+           | |    |
+875      atatgcagcg      866
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+857      gtccccgacg      866
+          |   || ||
+876      aatatgcagc      867
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+858      tccccgacgc      867
+                  |
+877      gaatatgcag      868
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+861      ccgacgcgac      870
+         |       ||
+880      gtagaatatg      871
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+863      gacgcgacgt      872
+         |||      |
+882      ctgtagaata      873
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+864      acgcgacgta      873
+            |  | ||
+883      gctgtagaat      874
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+865      cgcgacgtat      874
+                  |
+884      tgctgtagaa      875
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+869      acgtataaga      878
+          |  |  | |
+888      aggctgctgt      879
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+873      ataagatgtc      882
+          |     | |
+892      gaaaaggctg      883
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+876      agatgtcgtc      885
+         |    |   |
+895      taagaaaagg      886
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+885      cggaaaagaa      894
+            |  || |
+904      caatcgtcgt      895
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+887      gaaaagaatg      896
+                  |
+906      gccaatcgtc      897
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+890      aagaatgctg      899
+                  |
+909      cgagccaatc      900
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+892      gaatgctgct      901
+              | | |
+911      accgagccaa      902
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+896      gctgctaacc      905
+                  |
+915      aataaccgag      906
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+899      gctaaccgag      908
+         |        |
+918      cataataacc      909
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+903      accgagccaa      912
+         |  |     |
+922      ttaccataat      913
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+904      ccgagccaat      913
+         |   |  | |
+923      gttaccataa      914
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+906      gagccaataa      915
+         |        |
+925      cggttaccat      916
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+907      agccaataat      916
+          ||||||  |
+926      gcggttacca      917
+(Length = 10, Gap = 0 , Mismatch = 3)
+
+911      aataatacca      920
+         ||     | |
+930      ttgggcggtt      921
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+915      ataccattgg      924
+              |   |
+934      agacttgggc      925
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+916      taccattggc      925
+           |      |
+935      gagacttggg      926
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+937      gacctcctgt      946
+         ||  |    |
+956      ctaaatacga      947
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+939      cctcctgtag      948
+         ||   |   |
+958      ggctaaatac      949
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+941      tcctgtagca      950
+           | |    |
+960      ctggctaaat      951
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+942      cctgtagcat      951
+         |        |
+961      gctggctaaa      952
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+945      gtagcataaa      954
+              |   |
+964      tcggctggct      955
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+947      agcataaatc      956
+                | |
+966      aatcggctgg      957
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+951      taaatcggtc      960
+            ||  | |
+970      tgataatcgg      961
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+953      aatcggtcgg      962
+         || |  |  |
+972      tttgataatc      963
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+955      tcggtcggct      964
+         |    |   |
+974      aatttgataa      965
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+957      ggtcggctaa      966
+           |      |
+976      agaatttgat      967
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+958      gtcggctaat      967
+         |||    | |
+977      cagaatttga      968
+(Length = 10, Gap = 0 , Mismatch = 5)
+
+963      ctaatagttt      972
+           ||    ||
+982      ttttgcagaa      973
+(Length = 10, Gap = 0 , Mismatch = 6)
+
+968      agtttaagac      977
+         |   ||| ||
+987      tactattttg      978
+(Length = 10, Gap = 0 , Mismatch = 4)
+
+973      aagacgtttt      982
+               |  |
+992      ccacatacta      983
+(Length = 10, Gap = 0 , Mismatch = 8)
+
+975      gacgtttta      983
+         |  || | |
+992      ccacatact      984
+(Length = 9, Gap = 0 , Mismatch = 4)
+
+977      cgttttatca      986
+                  |
+996      agcgccacat      987
+(Length = 10, Gap = 0 , Mismatch = 9)
+
+978      gttttatcat      987
+         ||       |
+997      cagcgccaca      988
+(Length = 10, Gap = 0 , Mismatch = 7)
+
+987      tacacc      992
+         |    |
+998      acagcg      993
+(Length = 6, Gap = 0 , Mismatch = 4)
+
+992      cg      993
+         ||
+995      gc      994
+(Length = 2, Gap = 0 , Mismatch = 0)
+
+
+
+

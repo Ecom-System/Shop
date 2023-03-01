@@ -1,0 +1,42 @@
+.container {
+	min-height: 100vh;
+	display: flex;
+}
+
+.main {
+	flex: 1;
+	display: flex;
+	overflow: hidden;
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 20%;
+	background-color: #006f3f;
+	color: #fff;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+	background-color: #6cbf84;
+}
+
+.logo img {
+	width: 50%;
+	height: auto;
+}
+
+.tab {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0;
+}
