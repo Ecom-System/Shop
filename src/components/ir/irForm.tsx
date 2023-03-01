@@ -160,7 +160,7 @@ export function IRForm() {
 				const data = {
 					input_file_link: inputLink,
 					output_file_link: outputLink,
-					seq_name: finalValues.dnaSequence,
+					seq_name: finalValues.name,
 					max_gap: finalValues.maxGap,
 					max_mis: finalValues.maxMismatch,
 					min_len: finalValues.minLen,
