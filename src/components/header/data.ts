@@ -1,30 +1,30 @@
 const HEADER_HEIGHT = 70;
 
 
-const links=[ {
-  "link": "/",
-  "label": "Home"
+const links = [{
+	"link": "/",
+	"label": "Home"
 },
 {
-  "link": "/background",
-  "label": "Background"
+	"link": "/background",
+	"label": "Background"
 },
 {
-  "link": "/findIR",
-  "label": "Find IR"
+	"link": "/findIR",
+	"label": "Find IR"
 },
 {
-  "link": "/library",
-  "label": "Library"
+	"link": "/library",
+	"label": "Library"
 },
 {
-  "link": "/search",
-  "label": "Search"
+	"link": "/search",
+	"label": "Search"
 },
 {
-  "link": "/admin",
-  "label": "Admin Login"
+	"link": "/admin",
+	"label": "Admin Login"
 }
 ]
 
-export {HEADER_HEIGHT,links}
+export { HEADER_HEIGHT, links }

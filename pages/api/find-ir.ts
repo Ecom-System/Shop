@@ -1,3 +1,4 @@
+import { basePath } from './../../src/helpers/projectDirectory';
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { exec } from 'child_process';
@@ -27,33 +28,25 @@ export default async function handler(
 			try {
 				const { dnaSequence, name, maxMismatch, maxGap, minLen, maxLen } = req.body as Data;
 
-				// Start the performance timer
-				const start = performance.now();
-
 				// Call the C++ program with the input arguments
-				//exec(`F:\\350\\IR\\pages\\api\\IR.exe`, (error, stdout, stderr) => {
-				//exec(`F:\\350\\IR\\src\\helpers\\IR.exe`, (error, stdout, stderr) => {
+
 				// Set the maxBuffer option to 1GB (1000 * 1000 * 1000 bytes)
 				const options = { maxBuffer: 1000 * 1000 * 1000 };
-				exec(`F:\\350\\IR\\src\\helpers\\IR.exe -s ${name} -g ${maxGap} -x ${maxMismatch} -m ${minLen} -M ${maxLen}`, options, (error, stdout, stderr) => {
+				const in_path = basePath + "\\src\\helpers\\input.txt";
+				const out_path = basePath + "\\src\\helpers\\IUPACpal.txt";
+				const command = basePath + `\\src\\helpers\\IR.exe -s ${name} -g ${maxGap} -x ${maxMismatch} -m ${minLen} -M ${maxLen} -f ${in_path} -o ${out_path}`;
+				exec(command, options, (error, stdout, stderr) => {
 
 					if (error) {
 						console.error(`exec error: ${error}`);
 						///console.log(`stdout: ${stdout}`);
 						//console.error(`stderr: ${stderr}`);
-						const end = performance.now();
-						console.log(`Time taken: ${end - start} milliseconds`);
 
 						return res.status(500).json({
 							// error: `stdout: ${stdout}` + "\n" + `exec error: ${error}`
 							error: `stdout: ${stdout}`
 						});
 					}
-
-					// End the performance timer and log the elapsed time
-					const end = performance.now();
-					//console.log(`Time taken: ${end - start} milliseconds`);
-					stdout = `Time taken in backend(IR+exec()): ${end - start} milliseconds\n` + stdout;
 					//console.log(`stdout: ${stdout}`);
 					//console.error(`stderr: ${stderr}`);
 

@@ -660,14 +660,14 @@ int main(int argc, char* argv[]) {
 
 
     // Default parameters
-    string input_file = "F:\\350\\IR\\src\\helpers\\input.txt";
+    string input_file = "F:\\350\\IUPACpal_tmp\\src\\helpers\\input.txt";
     string seq_name = "seq0";
     int min_len = 2;
     int max_len = 10;
     int max_gap = 5;
     int mismatches = 0;
     // string output_file = "IUPACpal.out";
-    string output_file = "F:\\350\\IR\\src\\helpers\\IUPACpal.txt";
+    string output_file = "F:\\350\\IUPACpal_tmp\\src\\helpers\\IUPACpal.txt";
 
     // Parse command line arguments
     int c;
@@ -676,7 +676,7 @@ int main(int argc, char* argv[]) {
         switch(c)
         {
             case 'f':
-                // if(optarg) input_file = optarg;
+                if(optarg) input_file = optarg;
                 break;
             case 's':
                 if(optarg) seq_name = optarg;
@@ -694,7 +694,7 @@ int main(int argc, char* argv[]) {
                 if(optarg) mismatches = std::atoi(optarg);
                 break;
             case 'o':
-                // if(optarg) output_file = optarg;
+                if(optarg) output_file = optarg;
                 break;
         }
     }

@@ -18,6 +18,7 @@ import { Data } from "pages/api/find-ir";
 import { axios } from "src/lib/axios";
 import styles from "../../../styles/toggle.module.css";
 import { uploadFileCallBack } from "src/helpers/uploadHelper";
+import { basePath } from "src/helpers/projectDirectory";
 
 
 const getData = async () => {
@@ -167,10 +168,8 @@ export function IRForm() {
 
 				let fileName = generateName(finalValues.name, finalValues.maxMismatch, finalValues.maxGap, finalValues.minLen, finalValues.maxLen);
 
-				var filePath = "F:\\350\\IR\\src\\helpers";
-				// var file = new File([filePath], 'IUPACpal.txt');
+				var filePath = basePath + "\\src\\helpers";
 				var file = new File([output], 'IUPACpal.txt');
-				console.log("here...");
 
 				try {
 					const data = await uploadFileCallBack(file, "out_" + fileName) as any;
@@ -216,7 +215,7 @@ export function IRForm() {
 				// 	console.log(data2.data.link);
 				// }
 
-				console.log("got\n" + output);
+				// console.log("got\n" + output);
 
 			} catch (error: any) {
 				let msg = "There is an error in";
