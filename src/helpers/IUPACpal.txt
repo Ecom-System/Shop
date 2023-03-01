@@ -1,80 +1,40 @@
 Inverted Repeat of: F:\350\IUPACpal_tmp\src\helpers\input.txt
-Sequence name: meow
-Sequence length is: 29
+Sequence name: isOk
+Sequence length is: 26
 Start at position: 1
-End at position: 29
+End at position: 26
 Minimum length of Inverted Repeat is: 2
-Maximum length of Inverted Repeat is: 10
+Maximum length of Inverted Repeat is: 6
 Maximum gap between elements is: 4
-Number of mismatches allowed in IR: 6
+Number of mismatches allowed in IR: 4
 
 
 
 Inverted Repeats:
-2        cgc        4
+6        cccc        9
+         ||||
+17       gggg       14
+(Length = 4, Gap = 4 , Mismatch = 0)
+
+11       ttt       13
          | |
-7        ggg        5
-(Length = 3, Gap = 0 , Mismatch = 1)
+20       aga       18
+(Length = 3, Gap = 4 , Mismatch = 1)
 
-2        cg        3
-         ||
-5        gc        4
-(Length = 2, Gap = 0 , Mismatch = 0)
+12       ttggg       16
+         | | |
+25       accac       21
+(Length = 5, Gap = 4 , Mismatch = 2)
 
-7        gaaggaggtg       16
-         | |  ||  |
-29       cgtagtcggc       20
-(Length = 10, Gap = 3 , Mismatch = 5)
+13       tgggg       17
+         ||| |
+25       accac       21
+(Length = 5, Gap = 3 , Mismatch = 1)
 
-7        gaagga       12
-         | |  |
-20       cgtagt       15
-(Length = 6, Gap = 2 , Mismatch = 3)
-
-8        aaggaggt       15
-         |      |
-24       tcggcgta       17
-(Length = 8, Gap = 1 , Mismatch = 6)
-
-10       ggaggtgatg       19
-         | |   |  |
-29       cgtagtcggc       20
-(Length = 10, Gap = 0 , Mismatch = 6)
-
-13       ggtgatgc       20
-         |     ||
-29       cgtagtcg       22
-(Length = 8, Gap = 1 , Mismatch = 5)
-
-15       tgatgc       20
-         | |  |
-26       agtcgg       21
-(Length = 6, Gap = 0 , Mismatch = 3)
-
-16       gatgcgg       22
-         |   | |
-29       cgtagtc       23
-(Length = 7, Gap = 0 , Mismatch = 4)
-
-17       atgcg       21
-         ||  |
-27       tagtc       23
-(Length = 5, Gap = 1 , Mismatch = 2)
-
-19       gcggc       23
-         ||  |
-29       cgtag       25
-(Length = 5, Gap = 1 , Mismatch = 2)
-
-21       ggct       24
-         |  |
-29       cgta       26
-(Length = 4, Gap = 1 , Mismatch = 2)
-
-22       gc       23
-         ||
-29       cg       28
-(Length = 2, Gap = 4 , Mismatch = 0)
+16       ggag       19
+         || |
+24       ccac       21
+(Length = 4, Gap = 1 , Mismatch = 1)
 
 
 

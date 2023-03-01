@@ -72,6 +72,9 @@ export function IRForm() {
 	const [dnaFile, setDnaFile] = useState();
 	const [newContent, setNewContent] = useState("");
 	const [needClear, setNeedClear] = useState(false);
+	const [inputLink, setInputLink] = useState("");
+	const [outputLink, setOutputLink] = useState("");
+	const [readyDB, setReadyDB] = useState(false);
 	const [finalValues, setFinalValues] = useState<FinalValues>({
 		dnaSequence: '',
 		name: '',
@@ -91,10 +94,9 @@ export function IRForm() {
 	};
 
 
-
-
 	const handleSubmit = async (values: Data) => {
 		setNeedClear(!needClear);
+		setReadyDB(false);
 
 		showNotification({
 			id: 'load-data',
@@ -112,6 +114,7 @@ export function IRForm() {
 				let fileName = "in_" + generateName(values.name, values.maxMismatch, values.maxGap, values.minLen, values.maxLen);
 				const data = await uploadFileCallBack(dnaFile, fileName) as any;
 				const firebaseFileUrl = data.data.link;
+				setInputLink(firebaseFileUrl);
 				const content = await getFileContent(firebaseFileUrl);
 				setNewContent(content);
 			} catch (error: any) {
@@ -149,6 +152,43 @@ export function IRForm() {
 		getData();
 	}, []);
 
+	//insert data in database
+	useEffect(() => {
+
+		const postData = async () => {
+			try {
+				const data = {
+					input_file_link: inputLink,
+					output_file_link: outputLink,
+					seq_name: finalValues.dnaSequence,
+					max_gap: finalValues.maxGap,
+					max_mis: finalValues.maxMismatch,
+					min_len: finalValues.minLen,
+					max_len: finalValues.maxLen
+				};
+
+				axios.post('/insert-data', data)
+					.then(response => {
+						console.log('Data inserted successfully');
+					})
+					.catch(error => {
+						console.error('Error inserting data:', error);
+					});
+			} catch (e) {
+				console.log(e);
+			}
+		}
+
+		if (readyDB && inputLink.length > 0 && outputLink.length > 0) {
+			postData();
+			setReadyDB(false);
+			setInputLink("");
+			setOutputLink("");
+		}
+
+
+	}, [readyDB, inputLink, outputLink]);
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -158,6 +198,8 @@ export function IRForm() {
 
 				setIr(output);
 				setNeedClear(!needClear);
+				setReadyDB(true);
+
 				updateNotification({
 					id: 'load-data',
 					color: 'teal',
@@ -173,6 +215,7 @@ export function IRForm() {
 
 				try {
 					const data = await uploadFileCallBack(file, "out_" + fileName) as any;
+					setOutputLink(data.data.link);
 					console.log(data.data.link);
 					console.log("output lekha sesh");
 				} catch (e: any) {
@@ -193,7 +236,9 @@ export function IRForm() {
 						// file = new File([filePath], 'input.txt');
 						var file = new File([newContent], 'input.txt');
 						const data2 = await uploadFileCallBack(file, "in_" + fileName) as any;
+						setInputLink(data2.data.link);
 						console.log(data2.data.link);
+						console.log('input link found...');
 					} catch (e: any) {
 						console.log('in error input');
 
