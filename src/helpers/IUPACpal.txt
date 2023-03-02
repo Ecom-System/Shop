@@ -1,40 +1,45 @@
 Inverted Repeat of: F:\350\IUPACpal_tmp\src\helpers\input.txt
-Sequence name: isOk
-Sequence length is: 26
+Sequence name: test
+Sequence length is: 11
 Start at position: 1
-End at position: 26
+End at position: 11
 Minimum length of Inverted Repeat is: 2
-Maximum length of Inverted Repeat is: 6
-Maximum gap between elements is: 4
-Number of mismatches allowed in IR: 4
+Maximum length of Inverted Repeat is: 11
+Maximum gap between elements is: 2
+Number of mismatches allowed in IR: 2
 
 
 
 Inverted Repeats:
-6        cccc        9
-         ||||
-17       gggg       14
-(Length = 4, Gap = 4 , Mismatch = 0)
+1        acgt        4
+         |  |
+8        tata        5
+(Length = 4, Gap = 0 , Mismatch = 2)
 
-11       ttt       13
-         | |
-20       aga       18
-(Length = 3, Gap = 4 , Mismatch = 1)
+1        ac        2
+         ||
+4        tg        3
+(Length = 2, Gap = 0 , Mismatch = 0)
 
-12       ttggg       16
-         | | |
-25       accac       21
-(Length = 5, Gap = 4 , Mismatch = 2)
+4        ta        5
+         ||
+7        at        6
+(Length = 2, Gap = 0 , Mismatch = 0)
 
-13       tgggg       17
-         ||| |
-25       accac       21
-(Length = 5, Gap = 3 , Mismatch = 1)
+5        ata        7
+         |||
+11       tat        9
+(Length = 3, Gap = 1 , Mismatch = 0)
 
-16       ggag       19
-         || |
-24       ccac       21
-(Length = 4, Gap = 1 , Mismatch = 1)
+5        at        6
+         ||
+8        ta        7
+(Length = 2, Gap = 0 , Mismatch = 0)
+
+7        at        8
+         ||
+11       ta       10
+(Length = 2, Gap = 1 , Mismatch = 0)
 
 
 

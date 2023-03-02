@@ -19,6 +19,7 @@ import { axios } from "src/lib/axios";
 import styles from "../../../styles/toggle.module.css";
 import { uploadFileCallBack } from "src/helpers/uploadHelper";
 import { basePath } from "src/helpers/projectDirectory";
+import { Card } from '@mantine/core';
 
 
 const getData = async () => {
@@ -456,8 +457,13 @@ export function IRForm() {
 					</div>
 					<Image height={600} src={image.src} className={classes.image} />
 				</div>
-				<Code block>{newContent.length}</Code>
-				<Code block>{ir}</Code>
+				<Card key={1} style={{ marginBottom: '1rem' }}>
+					<Text weight={500} size="lg">
+						<Code className={classes.code} block>{ir}</Code>
+					</Text>
+					<Text></Text>
+				</Card>
+
 			</Container>
 		</div>
 	);

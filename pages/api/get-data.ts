@@ -4,7 +4,7 @@ import db from 'src/helpers/db';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	try {
 		const page = parseInt(req.query.page as string) || 1;
-		const perPage = 2;
+		const perPage = 5;
 		const start = (page - 1) * perPage;
 		const end = start + perPage;
 		const results = await new Promise((resolve, reject) => {

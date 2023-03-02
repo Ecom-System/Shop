@@ -27,7 +27,7 @@ a {
 
 .container {
 	width: calc(100% - 100px);
-	min-height: calc(100% - 200px);
+	min-height: 50vh;
 	margin: 50px;
 	padding: 50px;
 	backdrop-filter: blur(8px);
@@ -592,4 +592,94 @@ a .WavyText {
 
 .btn3:hover {
 	background-color: #c4dea4;
+}
+
+
+
+/* Table */
+.myTable {
+	border: 1px solid #C4DEA4;
+	background-color: #EEEEEE;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+.myTable td,
+.myTable th {
+	border: 1px solid #AAAAAA;
+	padding: 5px 5px;
+}
+
+.myTable tbody td {
+	font-size: 13px;
+	color: #333333;
+}
+
+.myTable tr:nth-child(even) {
+	background: #F6F6DB;
+}
+
+.myTable thead {
+	background: #CAAD7E;
+}
+
+.myTable thead th {
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: left;
+	border-left: 2px solid #D0E4F5;
+}
+
+.myTable thead th:first-child {
+	border-left: none;
+}
+
+.myTable tfoot {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #CAAD7E;
+	background: -moz-linear-gradient(top, #d7c19e 0%, #cfb58b 66%, #CAAD7E 100%);
+	background: -webkit-linear-gradient(top, #d7c19e 0%, #cfb58b 66%, #CAAD7E 100%);
+	background: linear-gradient(to bottom, #d7c19e 0%, #cfb58b 66%, #CAAD7E 100%);
+}
+
+.myTable tfoot td {
+	font-size: 14px;
+}
+
+.myTable tfoot .links {
+	align-items: right;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.myTable tfoot .links button {
+	display: inline-block;
+	background: #A7D489;
+	color: #000000;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+
+.myButton {
+	background-color: #caad7e;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.myButton:hover {
+	background-color: #ecbc9c;
+}
+
+.myButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
