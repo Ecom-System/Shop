@@ -11,7 +11,12 @@ import {
 	Container,
 	NumberInput,
 	Code,
+	Modal,
+	useMantineTheme,
+	Tabs,
+	Loader,
 } from "@mantine/core";
+
 interface Data {
 	id: number;
 	input_file_link: string;
@@ -24,6 +29,12 @@ interface Data {
 	status: number;
 }
 
+async function getFileContent(url: string) {
+
+	const response = await axios.get(`/api/getFirebaseFileContent?url=${encodeURIComponent(url)}`);
+	//console.log(response.data);
+	return response.data;
+}
 
 export function Library() {
 	const { classes } = useStyles();
@@ -31,8 +42,14 @@ export function Library() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(0);
 	const [selectedRow, setSelectedRow] = useState<Data | null>(null);
+	const [inputContent, setInputContent] = useState("");
+	const [outputContent, setOutputContent] = useState("");
 
 	const tableRef = useRef<HTMLTableElement>(null);
+
+	//modal handle
+	const [open, setOpen] = useState(false);
+	const handleClose = () => setOpen(false);
 
 	useEffect(() => {
 		axios.get<{ data: Data[]; totalPages: number }>(`/api/get-data?page=${currentPage}`)
@@ -49,14 +66,39 @@ export function Library() {
 		setCurrentPage(page);
 		setSelectedRow(null);
 	};
-	const handleRowClick = (row: Data) => {
+	const handleRowClick = async (row: Data) => {
 		console.log(row)
+		setInputContent("");
+		// setInputContent('<img src="/loading-circle.gif" alt="loading..." />');
+		setOutputContent("");
 		setSelectedRow(row);
+		setOpen(true);
+		try {
+			const content = await getFileContent(row.input_file_link);
+			setInputContent(content);
+		}
+		catch (e) {
+			console.log(e);
+			setInputContent('Opps! Invalid Input File Link!!');
+		}
+		try {
+			const content = await getFileContent(row.output_file_link);
+			setOutputContent(content);
+		}
+		catch (e) {
+			console.log(e);
+			setOutputContent('Opps! Invalid Output File Link!!');
+		}
+
+		// console.log(inputContent);
+		// console.log(outputContent);
+
 	};
 
 	const handleClickOutsideTable = (event: MouseEvent) => {
 		if (tableRef.current && !tableRef.current.contains(event.target as Node)) {
 			setSelectedRow(null);
+			// setOpen(true);
 		}
 	};
 	useEffect(() => {
@@ -76,7 +118,7 @@ export function Library() {
 			</li>
 		);
 	}
-	console.log(data)
+	// console.log(data)
 	return (<>
 		<div className='container' style={{ marginTop: '-5%' }}>
 
@@ -90,7 +132,9 @@ export function Library() {
 				<Text mt="md" style={{
 					font: "normal 20px/1.2 Segoe Print,Verdana, Helvetica",
 				}}>
-					You can view a history of previously analyzed DNA sequences, as well as the input parameters and identified IRs for each analysis.
+					You can view a history of previously analyzed DNA sequences, as well as the input parameters and
+					identified IRs for each analysis. Click on any row to see the input and output.
+
 				</Text>
 
 				<Paper withBorder shadow="md" p={30} mt={30} radius="md">
@@ -132,11 +176,37 @@ export function Library() {
 			</Container>
 		</div>
 
-		{selectedRow && (
+		{/* {selectedRow && (
 			<div>
 				<h2>Details for Row {selectedRow?.output_file_link}</h2>
 			</div>
-		)}
+		)} */}
+
+		<Modal opened={open} onClose={handleClose} size="80%" padding="md" title="IR analysis" closeButtonLabel="Close" centered >
+
+			<Tabs color="teal" variant="pills" radius="md" defaultValue="input">
+				<Tabs.List>
+					<Tabs.Tab value="input">Input</Tabs.Tab>
+					<Tabs.Tab value="output">Output</Tabs.Tab>
+				</Tabs.List>
+
+				<Tabs.Panel value="input" pt="xs">
+					{inputContent.length ? (<Code className={classes.code} block>{inputContent}</Code>) :
+						(<div dangerouslySetInnerHTML={{ __html: '<img src="/loading-circle.gif" alt="loading..." />' }}></div>)}
+					{/* <Code className={classes.code} block>{inputContent}</Code> */}
+
+				</Tabs.Panel>
+
+				<Tabs.Panel value="output" pt="xs">
+					{/* <Code className={classes.code} block>{outputContent}</Code> */}
+					{outputContent.length ?
+						(<Code className={classes.code} block>{outputContent}</Code>) :
+						(<div dangerouslySetInnerHTML={{ __html: '<img src="/loading-circle.gif" alt="loading..." />' }}></div>)}
+				</Tabs.Panel>
+
+			</Tabs>
+
+		</Modal>
 	</>
 	)
 }
