@@ -23,9 +23,19 @@ export default function BackgroundPage() {
 					<Tabs.Panel value="terminology" pl="xs">
 						<div className={styles.terminology}>
 							<h2>Terminology</h2>
+
 							<div className={styles.termCard}>
 								<h3>DNA</h3>
 								<p>A molecule that carries genetic information.</p>
+							</div>
+							<div className={styles.termCard}>
+								<h3>Complement DNA</h3>
+								<p>Complement DNA refers to the pairing of nucleotide bases in DNA through hydrogen bonds.
+									Adenine (A) pairs with thymine (T), and cytosine (C) pairs with guanine (G).
+									The complementary strand of DNA is formed by matching the base pairs with their
+									complementary counterparts. <br /><br />
+									For example, if a sequence on one strand reads "ATCG," the complementary strand will
+									have a sequence of "TAGC" since A pairs with T and C pairs with G. </p>
 							</div>
 							<div className={styles.termCard}>
 								<h3>String</h3>
@@ -36,6 +46,16 @@ export default function BackgroundPage() {
 									For example, in DNA sequences, the alphabet consists of four symbols, A (adenine), C (cytosine), G (guanine),
 									and T (thymine), while in RNA sequences, the alphabet consists of A, C, G, and U (uracil). In protein sequences,
 									the alphabet consists of 20 symbols, which correspond to the 20 different amino acids.</p>
+							</div>
+
+							<div className={styles.termCard}>
+								<h3>Prefix</h3>
+								<p>A prefix of a string is any contiguous substring that starts at the beginning of the string. </p>
+							</div>
+
+							<div className={styles.termCard}>
+								<h3>Suffix</h3>
+								<p>A suffix of a string is any contiguous substring that ends at the end of the string.</p>
 							</div>
 
 							<div className={styles.termCard}>
@@ -92,6 +112,30 @@ export default function BackgroundPage() {
 								<h3>Palindrome</h3>
 								<p>A sequence of nucleotides that reads the same forward and backward.</p>
 							</div>
+
+							<div className={styles.termCard}>
+								<h3>Maximal Palindrome</h3>
+								<p>A palindrome that cannot be extended to the left or right without breaking the palindrome condition.</p>
+							</div>
+
+							<div className={styles.termCard}>
+								<h3>Suffix Array</h3>
+								<p>A suffix array is a data structure that contains all the suffixes of
+									a given string, sorted in lexicographical order. The suffix array provides a
+									compact representation of all suffixes in the string and can be used to solve
+									a wide range of string problems efficiently. It allows fast pattern matching,
+									substring searches, and other string-related operations.  </p>
+							</div>
+							<div className={styles.termCard}>
+								<h3>LCP array</h3>
+								<p>Longest Common Prefix (LCP) array is a data structure that represents the length
+									of the longest common prefix between consecutive suffixes in a suffix array. </p>
+							</div>
+
+							{/* <div className={styles.termCard}>
+								<h3></h3>
+								<p></p>
+							</div> */}
 						</div>
 					</Tabs.Panel>
 
@@ -128,83 +172,40 @@ export default function BackgroundPage() {
 
 						<div className={styles.content}>
 							<h2>Methodology</h2>
-							<p>
-								Here, explain how you find the inverted repeat by using various data
-								structures and algorithms like sparse table, KMP, suffix array, LCP
-								array, etc.
-
-								Need modification....
-							</p>
-							<p>
-								The International Union of Pure and Applied Chemistry (IUPAC) encoding is an extended alphabet that provides
-								a single symbol representation for every possible subset of the standard 4-symbol DNA alphabet. This encoding
-								includes degenerate symbols that represent a set of possibilities. To determine complements of these symbols,
-								the current matching scheme is extended over the full IUPAC alphabet. The current scheme assigns a unique
-								complement to every IUPAC symbol by taking complements of the underlying symbols of the represented subset.
-								This is known as the simple complement matching scheme. However, this method does not take into account all
-								possible match scenarios. To address this, the degenerate complement matching scheme was introduced. Under this
-								scheme, two symbols match if there exists a pair of symbols that complement each other.
-							</p>
 
 
 							<p>
-								The standard set of IUPAC symbols is Σ+ = (A, C, G, T, R, Y, S, W, K, M, B, D, H, V, N). This raises the
-								question of how to determine complements of such IUPAC symbols. The paper presents two complement matching
-								schemes, simple and degenerate, and explains how they differ in terms of matching possibilities. Simple
-								complement matching assigns a unique complement to each IUPAC symbol based on the underlying characters of the
-								represented subset of Σ, whereas degenerate complement matching considers a match to occur whenever two IUPAC
-								characters have any possibility of matching between any of their respective associated subsets of characters.
-								The underlying algorithm of IUPACpal is independent of the matching scheme used and can be modified to fit the
-								intended use case.
+								<b>Step 1: Preprocessing for Kangaroo Method:</b>
+								<ul>
+									<li> Create a complement copy of the input DNA sequence.</li>
+									<li>Use the Manber-Myers algorithm to construct suffix arrays for the original and complement sequences.</li>
+									<li>Precompute the LCP (Longest Common Prefix) array for both suffix arrays to help match by using Kasai's algorithm.</li>
+								</ul>
+
 							</p>
+
 							<p>
-								The algorithm for identifying inverted repeats (IRs) in a DNA sequence examines each position in the sequence
-								to determine every valid IR with its center at that position while adhering to the input parameters for maximum
-								gap and size range. The algorithm uses the kangaroo method to create a function that identifies the longest
-								matching prefix of any two string substrings, called the longest common extension (LCE). To do this, the algorithm
-								generates indexing data structures such as the suffix array (SA) and longest common prefix (LCP) array. Then, the
-								algorithm considers a range of possible gaps for each location in the sequence and identifies symbols that are
-								equidistant from the center and are considered mismatches. It determines the minimal initial gap and increases it
-								to extend the IR and reduce the number of mismatches. This extension procedure is repeated to obtain all IRs for a
-								given center, considering the maximum gap and size range parameters. The algorithm maintains efficiency by
-								calculating only the necessary mismatch locations for a given set of parameters, avoiding unnecessary calculations.
+								<b>Step 2: Identification of Maximal Palindromes:</b>
+								<ul>
+									<li>Traverse the LCP array for the original sequence.</li>
+									<li>For each element in the LCP array, check if the corresponding suffixes in the original sequence form a palindrome.</li>
+									<li>To check if a suffix is a palindrome, compare the characters at the start and end of the suffix, then move inwards <br />toward the center until the entire suffix has been checked.</li>
+									<li>If the suffix is a palindrome, check if a prefix with the same length within the same LCP range exists.</li>
+									<li>If a prefix with the same length within the same LCP range exists, then the substring between the prefix and suffix is a maximal palindrome.</li>
+								</ul>
+
 							</p>
 
-							<hr></hr>
+							<p>
+								<b>Step 3: Identification of Inverted Repeats:</b>
+								<ul>
+									<li>Iterate over every position in the input sequence.</li>
+									<li>For each position, use the Kangaroo method to identify all mismatched pairs equidistant from the current position.</li>
+									<li>Calculate only the mismatch locations needed for a given set of parameters to maintain efficiency.</li>
+									<li>For each identified mismatched pair, consider a range of gap sizes and extend the inverted repeat to both the left and right, <br />as long as the number of mismatches stays below some maximum value.</li>
+								</ul>
+							</p>
 
-							The methodology of the paper "IUPACpal: efficient identification of inverted repeats in IUPAC-encoded DNA sequences" involves
-							the development and implementation of an algorithm for identifying inverted repeats in IUPAC-encoded DNA sequences. The
-							algorithm builds upon the maximal palindrome identifying algorithm, and focuses on software
-							implementation above the underlying algorithm. <br /><br />
-
-							The maximal palindrome identifying algorithm is a method for identifying all maximal palindromic substrings in a given
-							DNA sequence. The algorithm first preprocesses the sequence by constructing a suffix tree, which is a data structure
-							that stores all possible substrings of the sequence in a compressed form. The algorithm then traverses the suffix tree
-							and identifies all pairs of palindromic substrings that overlap or are adjacent to each other, and merges them into
-							larger palindromes. This process is repeated until no further palindromes can be merged. The resulting set of
-							palindromes is then filtered to remove any non-maximal palindromes, i.e., palindromes that are fully contained within
-							larger palindromes. The algorithm has a time complexity of O(n log n) and a space complexity of O(n), where n is the
-							length of the input sequence.<br /><br />
-
-							To identify inverted repeats, the algorithm exhaustively examines each position within a sequence and determines every
-							valid inverted repeat with its center at that position which adheres to the given input parameters. This is achieved by
-							identifying symbols which are equidistant from the center and considered to mismatch, using the kangaroo method. The
-							kangaroo method involves preprocessing the sequence to obtain both its suffix tree and the suffix tree of the reverse
-							of the sequence.<br /><br />
-
-							Once these mismatches are identified, the algorithm considers a minimal initial gap which is subsequently increased in
-							order to reduce the number of mismatches inside the inverted repeat being considered, and thus permits a longer extension.
-							This extension is performed repeatedly to obtain all inverted repeats for a given center, while taking into account the
-							parameters specifying the maximum gap and the size range for the inverted repeat itself.<br /><br />
-
-							Effort was made to ensure space and time efficiency within the specific components of the implementation, and additional
-							steps were included to address gaps and mismatches through the use of the kangaroo method of common extensions. The
-							algorithm maintains efficiency by calculating only the necessary mismatch locations needed for a given set of parameters,
-							and no more.<br /><br />
-
-							Overall, the methodology of the paper involves the development and implementation of an algorithm that is efficient in
-							identifying inverted repeats in IUPAC-encoded DNA sequences, by building upon previous algorithms and incorporating
-							additional steps for addressing gaps and mismatches.
 						</div>
 
 

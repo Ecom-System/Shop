@@ -3,12 +3,12 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #ecebc9;
+	background-color: #c4dea4;
 	font-family: sans-serif;
 }
 
 .switchButton {
-	background: rgba(196, 222, 164, 0.8);
+	background: #a7d489;
 	border-radius: 15px;
 	overflow: hidden;
 	width: 180px;
@@ -77,6 +77,6 @@
 
 .switchButtonLabelSpan {
 	position: relative;
-	color: #ecebc9;
-	text-shadow: 1px 1px #1d1d1f;
+	color: #ffffff;
+	/* text-shadow: 1px 1px #1d1d1f; */
 }
