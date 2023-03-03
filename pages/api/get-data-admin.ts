@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		});
 		const response = {
 			data: (results as any).slice(start, end),
-			totalPages: ((results as any).length + perPage - 1) / perPage
+			totalPages: Math.floor(((results as any).length + perPage - 1) / perPage)
 		};
 		res.status(200).json(response);
 	} catch (err) {

@@ -1,2 +1,2 @@
->test
-ACGTATATTAT
+>wrongData
+acggct

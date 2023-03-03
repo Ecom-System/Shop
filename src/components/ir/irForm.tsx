@@ -148,11 +148,6 @@ export function IRForm() {
 		}
 	};
 
-	//library page o ota oibo
-	useEffect(() => {
-		getData();
-	}, []);
-
 	//insert data in database
 	useEffect(() => {
 

@@ -5,7 +5,7 @@ export default function BackgroundPage() {
 	return (
 		<div className={styles.container} style={{ marginTop: '-8%' }}>
 			<main className={styles.main}>
-				<Tabs color="teal" radius="lg" variant="pills" orientation="vertical" defaultValue="terminology">
+				<Tabs color="lime" radius="lg" variant="pills" orientation="vertical" defaultValue="terminology">
 					<Tabs.List>
 						<Tabs.Tab value="terminology">
 

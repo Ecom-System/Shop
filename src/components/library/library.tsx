@@ -161,16 +161,18 @@ export function Library() {
 								</tr>
 							))}
 						</tbody>
-						<tfoot>
+						{totalPages >= 2 && (
+							<tfoot>
 
-							<tr>
-								<td colSpan={5}>
-									<div className="links">
-										<ul style={{ listStyleType: 'none', display: 'flex', flex: 'horizontal' }}>{paginationItems}</ul>
-									</div></td>
+								<tr>
+									<td colSpan={5}>
+										<div className="links">
+											<ul style={{ listStyleType: 'none', display: 'flex', flex: 'horizontal' }}>{paginationItems}</ul>
+										</div></td>
 
-							</tr>
-						</tfoot>
+								</tr>
+							</tfoot>
+						)}
 					</table>
 				</Paper>
 			</Container>
@@ -184,7 +186,7 @@ export function Library() {
 
 		<Modal opened={open} onClose={handleClose} size="80%" padding="md" title="IR analysis" closeButtonLabel="Close" centered >
 
-			<Tabs color="teal" variant="pills" radius="md" defaultValue="input">
+			<Tabs color="lime" variant="pills" radius="md" defaultValue="input">
 				<Tabs.List>
 					<Tabs.Tab value="input">Input</Tabs.Tab>
 					<Tabs.Tab value="output">Output</Tabs.Tab>

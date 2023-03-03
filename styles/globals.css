@@ -599,7 +599,7 @@ a .WavyText {
 /* Table */
 .myTable {
 	border: 1px solid #C4DEA4;
-	background-color: #EEEEEE;
+	background-color: #ffffff;
 	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
@@ -644,6 +644,7 @@ a .WavyText {
 	background: -moz-linear-gradient(top, #d7c19e 0%, #cfb58b 66%, #CAAD7E 100%);
 	background: -webkit-linear-gradient(top, #d7c19e 0%, #cfb58b 66%, #CAAD7E 100%);
 	background: linear-gradient(to bottom, #d7c19e 0%, #cfb58b 66%, #CAAD7E 100%);
+	opacity: 2;
 }
 
 .myTable tfoot td {
@@ -682,4 +683,14 @@ a .WavyText {
 .myButton:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+.my-div {
+	margin-top: 7px;
+}
+
+.my-div:hover {
+	/* background-color: lightgray; */
+	color: black;
+	cursor: pointer;
 }

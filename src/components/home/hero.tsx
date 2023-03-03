@@ -17,7 +17,7 @@ import useStyles from './styles';
 export function HeroBullets() {
 	const { classes } = useStyles();
 	return (
-		<div className='container' style={{ marginTop: '-75px' }}>
+		<div className='container' style={{ marginTop: '-5%' }}>
 			<Container>
 				<div className={classes.inner}>
 					<div className={classes.content}>
