@@ -39,11 +39,11 @@ async function getFileContent(url: string) {
 // Define the type of props
 interface MyComponentProps {
 	keyToFind: string;
+	onClose: () => void;
 	// description: string;
 }
 
-const Result: React.FC<MyComponentProps> = ({ keyToFind }) => {
-	console.log("I'm from result page: " + keyToFind);
+const Result: React.FC<MyComponentProps> = ({ keyToFind, onClose }) => {
 
 	const { classes } = useStyles();
 	const [data, setData] = useState<Data[]>([]);
@@ -54,6 +54,8 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind }) => {
 	const [outputContent, setOutputContent] = useState("");
 
 	const tableRef = useRef<HTMLTableElement>(null);
+	const ref = useRef<HTMLTableElement>(null);
+
 
 	//modal handle
 	const [open, setOpen] = useState(false);
@@ -114,6 +116,21 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind }) => {
 		};
 	}, []);
 
+	useEffect(() => {
+		const handleClickOutside = (event: any) => {
+			if (ref.current && !ref.current.contains(event.target as Node)) {
+				console.log("Outside of Result page");
+				onClose();
+			}
+		};
+
+		document.addEventListener('click', handleClickOutside);
+		return () => {
+			document.removeEventListener('click', handleClickOutside);
+		};
+	}, [ref]);
+
+
 	const paginationItems = [];
 	for (let i = 1; i <= totalPages; i++) {
 		paginationItems.push(
@@ -124,9 +141,9 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind }) => {
 			</li>
 		);
 	}
-	// console.log(data)
+
 	return (<>
-		<div className='container' style={{ marginTop: '-5%' }}>
+		<div className='container' style={{ marginTop: '-5%' }} ref={ref} >
 
 			<Container>
 				<Title className={classes.title} style={{

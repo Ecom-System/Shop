@@ -10,12 +10,17 @@ const Search = () => {
 		setSearchKeyword(keyword);
 		setRead(1);
 	};
+
+	const handleClose = () => {
+		setRead(0);
+	}
+
 	return (
 		<div>
 			{read === 0 ? (
 				<SearchForm onSearch={handleSearch} />
 			) : (
-				<Result keyToFind={searchKeyword} />
+				<Result keyToFind={searchKeyword} onClose={handleClose} />
 			)}
 		</div>
 	);
