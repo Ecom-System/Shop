@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		const start = (page - 1) * perPage;
 		const end = start + perPage;
 		const results = await new Promise((resolve, reject) => {
-			db.query('SELECT * FROM irtable where status = 0', (err, results) => {
+			db.query('SELECT * FROM irtable where status = 1', (err, results) => {
 				if (err) {
 					reject(err);
 				} else {
