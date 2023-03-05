@@ -20,10 +20,10 @@ const links = [{
 {
 	"link": "/search",
 	"label": "Search"
-},
-{
-	"link": "/admin-mt19937/login",
-	"label": "Admin Login"
+// },
+// {
+// 	"link": "/admin-mt19937/login",
+// 	"label": "Admin Login"
 }
 ]
 

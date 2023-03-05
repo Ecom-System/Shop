@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createStyles, Header, Container, Group, Burger, Paper, Transition, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { HEADER_HEIGHT, links } from './data';
 import useStyles from './styles';
 import Link from 'next/link';
-
+import { useRouter } from 'next/router'
 
 
 // interface HeaderResponsiveProps {
@@ -12,9 +12,20 @@ import Link from 'next/link';
 // }
 
 export default function HeaderResponsive() {
+	const router = useRouter();
 	const [opened, { toggle, close }] = useDisclosure(false);
-	const [active, setActive] = useState(links[0].link);
+	const [active, setActive] = useState(router.asPath);
 	const { classes, cx } = useStyles();
+
+	// Get the current page URL
+	const currentUrl = router.asPath;
+
+	console.log("Current URL: " + currentUrl);
+
+	useEffect(() => {
+		console.log('active= ' + active + ", URL = " + router.asPath);
+		setActive(router.asPath);
+	}, [router.asPath]);
 
 	const items = links.map((link) => (
 		<Link
@@ -30,6 +41,8 @@ export default function HeaderResponsive() {
 			{link.label}
 		</Link>
 	));
+
+
 
 	return (
 		<Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
