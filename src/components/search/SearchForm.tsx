@@ -111,7 +111,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
 								<button className='btn2' onClick={openSearch}>Get started</button>
 							</Group>
 						</div>
-						<Image src={image.src} className={classes.image} />
+						{/* <Image src={image.src} className={classes.image} /> */}
+						<img src='/search.png' height={400} width={350} />
 					</div>
 				</Container>
 

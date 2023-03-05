@@ -450,7 +450,7 @@ export function IRForm() {
 						</Paper>
 
 					</div>
-					<Image height={600} src={image.src} className={classes.image} />
+					<img src='/findIR.png' style={{ height: '45%', width: '40%', marginTop: '15%' }} />
 				</div>
 				<Card key={1} style={{ marginBottom: '1rem' }}>
 					<Text weight={500} size="lg">
