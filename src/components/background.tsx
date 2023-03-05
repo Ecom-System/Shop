@@ -179,7 +179,7 @@ export default function BackgroundPage() {
 								<ul>
 									<li> Create a complement copy of the input DNA sequence.</li>
 									<li>Use the Manber-Myers algorithm to construct suffix arrays for the original and complement sequences.</li>
-									<li>Precompute the LCP (Longest Common Prefix) array for both suffix arrays to help match by using Kasai's algorithm.</li>
+									<li>Precompute the LCP (Longest Common Prefix) array for both suffix arrays by using Kasai's algorithm to help match.</li>
 								</ul>
 
 							</p>

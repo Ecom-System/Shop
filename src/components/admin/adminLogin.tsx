@@ -1,25 +1,24 @@
 import {
 	TextInput,
-	PasswordInput,
-	Checkbox,
-	Anchor,
 	Paper,
 	Title,
 	Text,
 	Container,
-	Group,
-	Button,
 	useMantineTheme,
+	Image,
 } from '@mantine/core';
 import { useRouter } from 'next/router';
 import { useForm } from "@mantine/form";
 import { showNotification } from '@mantine/notifications';
 import Cookies from "js-cookie";
 import { useEffect } from 'react';
+import useStyles from './styles';
+// import image from '/login.gif';
 
 export function AdminLogin() {
 	const theme = useMantineTheme();
 	const router = useRouter();
+	const { classes } = useStyles();
 
 
 	useEffect(() => {
@@ -82,43 +81,57 @@ export function AdminLogin() {
 
 	return (
 		<div className='container' style={{ marginTop: '-5%' }}>
-			<Container size={420} my={40} >
-				<Title
-					align="center"
-					sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
-				>
-					Welcome back Admin!
-				</Title>
 
-				<Paper withBorder shadow="md" p={30} mt={30} radius="md">
+			<Container>
+				<div className={classes.inner}>
+					<div className={classes.content}>
+						<Title className={classes.title} style={{
+							textShadow: "#caad7e 0px 3px 0px, #c4dea4 3px 3px 3px",
 
-					<form onSubmit={form.onSubmit(handleSubmit)}>
+						}}>
+							Welcome back Admin!
+						</Title>
+						<Text mt="md" style={{
+							font: "normal 20px/1.2 Segoe Print,Verdana, Helvetica",
+						}}>
+							Login to manage pending IR analysis
+						</Text>
+
+						<Paper withBorder shadow="md" p={30} mt={30} radius="md">
+
+							<form onSubmit={form.onSubmit(handleSubmit)}>
 
 
 
-						<TextInput
-							required
-							label="Email"
-							placeholder="Enter your email"
-							{...form.getInputProps('email')}
-						/>
+								<TextInput
+									required
+									label="Email"
+									placeholder="Enter your email"
+									{...form.getInputProps('email')}
+								/>
 
 
-						<TextInput
-							required
-							label="Password"
-							placeholder="Enter your password"
-							style={{ marginTop: theme.spacing.md }}
-							{...form.getInputProps('pass')}
-						/>
+								<TextInput
+									required
+									label="Password"
+									placeholder="Enter your password"
+									style={{ marginTop: theme.spacing.md }}
+									{...form.getInputProps('pass')}
+								/>
 
-						<button className="btn1" type='submit'
+								<button className="btn1" type='submit'
 
-						> Login</button>
-					</form>
+								> Login</button>
+							</form>
 
-				</Paper>
+						</Paper>
+
+					</div>
+					<Image src={'/login.gif'} className={classes.image} />
+				</div>
+
 			</Container>
+
 		</div>
 	);
 }

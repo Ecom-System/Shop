@@ -22,7 +22,7 @@ const links = [{
 	"label": "Search"
 },
 {
-	"link": "/admin",
+	"link": "/admin-mt19937/login",
 	"label": "Admin Login"
 }
 ]

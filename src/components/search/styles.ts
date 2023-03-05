@@ -1,6 +1,16 @@
 import { createStyles } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
+	code: {
+		borderRadius: theme.radius.sm,
+		padding: `${theme.spacing.lg}px ${theme.spacing.lg}px`,
+		fontFamily: theme.fontFamilyMonospace,
+		fontSize: theme.fontSizes.md,
+		overflowX: 'auto',
+		whiteSpace: 'pre-wrap',
+		wordBreak: 'break-word',
+	},
+
 	inner: {
 		display: 'flex',
 		justifyContent: 'space-between',
@@ -21,7 +31,7 @@ const useStyles = createStyles((theme) => ({
 	title: {
 		color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-		fontSize: 44,
+		fontSize: 40,
 		lineHeight: 1.2,
 		fontWeight: 800,
 
