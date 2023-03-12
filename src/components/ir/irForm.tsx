@@ -13,20 +13,20 @@ import React, { useEffect, useState } from 'react';
 import { FileInput, useMantineTheme } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import useStyles from './styles';
-import image from '../../assets/find-ir.jpg';
 import { Data } from "pages/api/find-ir";
-import { axios } from "src/lib/axios";
+import axios from 'axios';
 import styles from "../../../styles/toggle.module.css";
 import { uploadFileCallBack } from "src/helpers/uploadHelper";
 import { basePath } from "src/helpers/projectDirectory";
 import { Card } from '@mantine/core';
+import DisplayResult from "../displayResult";
 
 
 const getData = async () => {
 	try {
-		const response = await axios.get('/get-data');
+		const response = await axios.get('/api/get-data');
 		const data = response.data;
-		console.log(data); // logs the data retrieved from the database
+		// console.log(data); // logs the data retrieved from the database
 	} catch (error) {
 		console.error(error);
 	}
@@ -35,7 +35,7 @@ const getData = async () => {
 
 async function getFileContent(url: string) {
 
-	const response = await axios.get(`/getFirebaseFileContent?url=${encodeURIComponent(url)}`);
+	const response = await axios.get(`/api/getFirebaseFileContent?url=${encodeURIComponent(url)}`);
 	//console.log(response.data);
 	return response.data;
 }
@@ -68,7 +68,7 @@ function generateName(seq_name: string, max_mis: number, max_gap: number, min_le
 export function IRForm() {
 	const { classes } = useStyles();
 	const [isUsingFileInput, setIsUsingFileInput] = useState(false);
-	const [ir, setIr] = useState();
+	const [ir, setIr] = useState("");
 	const theme = useMantineTheme();
 	const [dnaFile, setDnaFile] = useState();
 	const [newContent, setNewContent] = useState("");
@@ -119,7 +119,7 @@ export function IRForm() {
 				const content = await getFileContent(firebaseFileUrl);
 				setNewContent(content);
 			} catch (error: any) {
-				let msg = "There is an error in";
+				let msg = "There is an error in ";
 				if (isUsingFileInput) {
 					msg += "your input file";
 				} else {
@@ -188,8 +188,8 @@ export function IRForm() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.post("/update-file", { newContent });
-				const response2 = await axios.post("/find-ir", finalValues);
+				const response = await axios.post("/api/update-file", { newContent });
+				const response2 = await axios.post("/api/find-ir", finalValues);
 				const { answer, output } = response2.data;
 
 				setIr(output);
@@ -259,7 +259,7 @@ export function IRForm() {
 				// console.log("got\n" + output);
 
 			} catch (error: any) {
-				let msg = "There is an error in";
+				let msg = "There is an error in ";
 				if (isUsingFileInput) {
 					msg += "your input file";
 				} else {
@@ -342,6 +342,15 @@ export function IRForm() {
 		}),
 
 	});
+
+	useEffect(() => {
+		const clean = async () => {
+			setIr("");
+		};
+		if (ir.length > 0)
+			clean();
+	}, [form.values]);
+
 	return (
 		<div className='container' style={{ marginTop: '-75px' }}>
 
@@ -452,12 +461,9 @@ export function IRForm() {
 					</div>
 					<img src='/findIR.png' style={{ height: '45%', width: '40%', marginTop: '15%' }} />
 				</div>
-				<Card key={1} style={{ marginBottom: '1rem' }}>
-					<Text weight={500} size="lg">
-						<Code className={classes.code} block>{ir}</Code>
-					</Text>
-					<Text></Text>
-				</Card>
+				{ir.length > 0 && (
+					<DisplayResult code={ir} cnt={20} />
+				)}
 
 			</Container>
 		</div>

@@ -1,2 +1,2 @@
->wrongData
-acggct
+>kalu
+ACGACTACGT

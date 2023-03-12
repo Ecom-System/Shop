@@ -19,6 +19,7 @@ import {
 import Cookies from 'js-cookie';
 import router from 'next/router';
 import { showNotification } from '@mantine/notifications';
+import DisplayResult from '../displayResult';
 
 interface Data {
 	id: number;
@@ -63,7 +64,7 @@ export function AdminHome() {
 	}, []);
 
 	useEffect(() => {
-		axios.get<{ data: Data[]; totalPages: number }>(`/api/get-data?page=${currentPage}`)
+		axios.get<{ data: Data[]; totalPages: number }>(`/api/get-data-admin?page=${currentPage}`)
 			.then(response => {
 				setData(response.data.data);
 				setTotalPages(response.data.totalPages);
@@ -87,7 +88,7 @@ export function AdminHome() {
 		}
 		catch (e) {
 			console.log(e);
-			setInputContent('Opps! Invalid Input File Link!!');
+			setInputContent('Opps! Your network speed may be slow. Please ensure that your internet connection is stable and there are no connectivity issues.');
 		}
 		try {
 			const content = await getFileContent(row.output_file_link);
@@ -95,7 +96,7 @@ export function AdminHome() {
 		}
 		catch (e) {
 			console.log(e);
-			setOutputContent('Opps! Invalid Output File Link!!');
+			setOutputContent('Opps! Your network speed may be slow. Please ensure that your internet connection is stable and there are no connectivity issues.');
 		}
 	};
 
@@ -131,10 +132,11 @@ export function AdminHome() {
 
 		axios.put('../api/update-data', {
 			id: selectedRow?.id,
-			status: 1,
+			status: 0,
 		})
 			.then((response) => {
 				// console.log(response);
+				router.reload();
 				showNotification({
 					title: "Update Status",
 					message: "The analysis is accepted successfully.",
@@ -169,6 +171,8 @@ export function AdminHome() {
 		})
 			.then((response) => {
 				// console.log(response);
+				router.reload();
+
 				showNotification({
 					title: "Update Status",
 					message: "The analysis is rejected successfully.",
@@ -207,47 +211,51 @@ export function AdminHome() {
 
 				</Text>
 
-				<Paper withBorder shadow="md" p={30} mt={30} radius="md">
+				{data.length ? (
+					<Paper withBorder shadow="md" p={30} mt={30} radius="md">
 
 
-					<table ref={tableRef} className="myTable">
-						<thead>
-							<tr>
-								<th>Sequence name</th>
-								<th>Max Gap</th>
-								<th>Max mismatch</th>
-								<th>Min length</th>
-								<th>Max length</th>
-
-							</tr>
-						</thead>
-						<tbody>
-							{data.map((item) => (
-								<tr key={item.id} onClick={() => handleRowClick(item)}>
-									<td>{item.seq_name}</td>
-									<td>{item.max_gap}</td>
-									<td>{item.max_mis}</td>
-									<td>{item.min_len}</td>
-									<td>{item.max_len}</td>
-								</tr>
-							))}
-						</tbody>
-
-						{totalPages >= 2 && (
-							<tfoot>
+						<table ref={tableRef} className="myTable">
+							<thead>
 								<tr>
-									<td colSpan={5}>
-										<div className="links">
-											<ul style={{ listStyleType: 'none', display: 'flex', flex: 'horizontal' }}>{paginationItems}</ul>
-										</div></td>
+									<th>Sequence name</th>
+									<th>Max Gap</th>
+									<th>Max mismatch</th>
+									<th>Min length</th>
+									<th>Max length</th>
 
 								</tr>
-							</tfoot>
-						)}
+							</thead>
+							<tbody>
+								{data.map((item) => (
+									<tr key={item.id} onClick={() => handleRowClick(item)}>
+										<td>{item.seq_name}</td>
+										<td>{item.max_gap}</td>
+										<td>{item.max_mis}</td>
+										<td>{item.min_len}</td>
+										<td>{item.max_len}</td>
+									</tr>
+								))}
+							</tbody>
 
-					</table>
+							{totalPages >= 2 && (
+								<tfoot>
+									<tr>
+										<td colSpan={5}>
+											<div className="links">
+												<ul style={{ listStyleType: 'none', display: 'flex', flex: 'horizontal' }}>{paginationItems}</ul>
+											</div></td>
 
-				</Paper>
+									</tr>
+								</tfoot>
+							)}
+
+						</table>
+
+					</Paper>
+				) : (
+					<div className={classes.noResults} >No pending requests...</div>
+				)}
 
 			</Container>
 
@@ -262,7 +270,8 @@ export function AdminHome() {
 				</Tabs.List>
 
 				<Tabs.Panel value="input" pt="xs">
-					{inputContent.length ? (<Code className={classes.code} block>{inputContent}</Code>) :
+					{/* (<Code className={classes.code} block>{inputContent}</Code>) */}
+					{inputContent.length ? (<DisplayResult code={inputContent} cnt={20} />) :
 						(<div dangerouslySetInnerHTML={{ __html: '<img src="/loading-circle.gif" alt="loading..." />' }}></div>)}
 
 
@@ -272,7 +281,7 @@ export function AdminHome() {
 				<Tabs.Panel value="output" pt="xs">
 
 					{outputContent.length ?
-						(<Code className={classes.code} block>{outputContent}</Code>) :
+						(<DisplayResult code={outputContent} cnt={20} />) :
 						(<div dangerouslySetInnerHTML={{ __html: '<img src="/loading-circle.gif" alt="loading..." />' }}></div>)}
 
 				</Tabs.Panel>

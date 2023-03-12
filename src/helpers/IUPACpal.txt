@@ -1,16 +1,28 @@
-Inverted Repeat of: F:\350\IUPACpal_tmp\src\helpers\input.txt
-Sequence name: wrongData
-Sequence length is: 6
-Start at position: 1
-End at position: 6
+Sequence name: kalu
+Sequence length is: 10
 Minimum length of Inverted Repeat is: 2
-Maximum length of Inverted Repeat is: 6
+Maximum length of Inverted Repeat is: 10
 Maximum gap between elements is: 4
-Number of mismatches allowed in IR: 3
+Number of mismatches allowed in IR: 4
 
 
 
 Inverted Repeats:
+1        acg        3
+         |||
+10       tgc        8
+(Length = 3, Gap = 4 , Mismatch = 0)
+
+4        ac        5
+         ||
+10       tg        9
+(Length = 2, Gap = 3 , Mismatch = 0)
+
+7        ac        8
+         ||
+10       tg        9
+(Length = 2, Gap = 0 , Mismatch = 0)
+
 
 
 

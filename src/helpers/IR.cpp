@@ -22,6 +22,21 @@ using namespace std::chrono;
 typedef int INT;
 
 
+
+bool is_valid_iupac_dna(string s) {
+    set<char> valid_bases {'A', 'C', 'G', 'T', 'U', 'R', 'Y', 'S', 'W', 'K', 'M', 'B', 'D', 'H', 'V', 'N', '*', '-'};
+    for (char c : s) {
+        char ch = c;
+        if( 'a' <= ch && ch <= 'z') {
+            ch = ch - 32;
+        }
+        if (valid_bases.count(ch) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 string formatedTime(double duration) {
     string units;
     double time_taken;
@@ -660,14 +675,14 @@ int main(int argc, char* argv[]) {
 
 
     // Default parameters
-    string input_file = "F:\\350\\IUPACpal_tmp\\src\\helpers\\input.txt";
+    string input_file = "F:\\350\\IUPACpalV2\\src\\helpers\\input.txt";
     string seq_name = "seq0";
     int min_len = 2;
     int max_len = 10;
     int max_gap = 5;
     int mismatches = 0;
     // string output_file = "IUPACpal.out";
-    string output_file = "F:\\350\\IUPACpal_tmp\\src\\helpers\\IUPACpal.txt";
+    string output_file = "F:\\350\\IUPACpalV2\\src\\helpers\\IUPACpal.txt";
 
     // Parse command line arguments
     int c;
@@ -750,7 +765,10 @@ int main(int argc, char* argv[]) {
     }
 
     // Check if sequence name was found, exit if not
-    if (!found_seq) {  usage(); cout << "Error: Sequence '" + seq_name + "' not found in file '" + input_file + "'." << endl; return -1; }
+    if (!found_seq) { cout << "Error: Sequence '" + seq_name + "' not found in your input DNA file." << endl; return -1; }
+
+    //invalid?
+    if (!is_valid_iupac_dna(contents)) { cout << "Error: Provided sequence is not a valid IUPAC-encoded DNA." << endl; return -1; }
 
     long int n = contents.length();
     unsigned char * seq = ( unsigned char* ) malloc( ( n ) * sizeof( unsigned char ) );
@@ -781,10 +799,31 @@ int main(int argc, char* argv[]) {
 
 
     //manually boundary checking
-    max_len = min((int)n, max_len);
-    max_gap = min( (int)n, max_gap);
-    mismatches = min( (int)n, mismatches);
-    min_len = min( (int)n, min_len);
+    // max_len = min((int)n, max_len);
+    // max_gap = min( (int)n, max_gap);
+    // mismatches = min( (int)n, mismatches);
+    // min_len = min( (int)n, min_len);
+
+    string warn = "";
+    if(max_len > n) {
+        max_len = n;
+        warn += "Warning: max_len exceeds sequence length.\n";
+    }
+
+    if(min_len > n) {
+        min_len = n;
+        warn += "Warning: min_len exceeds sequence length.\n";
+    }
+
+    if(max_gap > n) {
+        max_gap = n;
+        warn += "Warning: max_gap exceeds sequence length.\n";
+    }
+
+    if(mismatches > n) {
+        mismatches = n;
+        warn += "Warning: mismatches exceeds sequence length.\n";
+    }
 
     // Optionally display user given options
     if (false) {
@@ -1094,11 +1133,11 @@ int main(int argc, char* argv[]) {
     ofstream file;
     file.open(output_file);
 
-    file << "Inverted Repeat of: " << input_file << endl;
+    // file << "Inverted Repeat of: " << input_file << endl;
     file << "Sequence name: " << seq_name << endl;
     file << "Sequence length is: " << n << endl;
-    file << "Start at position: " << 1 << endl;
-    file << "End at position: " << n << endl;
+    // file << "Start at position: " << 1 << endl;
+    // file << "End at position: " << n << endl;
     file << "Minimum length of Inverted Repeat is: "  << min_len << endl;
     file << "Maximum length of Inverted Repeat is: "  << max_len << endl;
     file << "Maximum gap between elements is: "  << max_gap << endl;
@@ -1184,6 +1223,7 @@ int main(int argc, char* argv[]) {
     double time_taken = duration_cast<nanoseconds>(end - start).count();
 
     cout << "Time taken in to find all IR: " << formatedTime(time_taken) << endl;
+    cout << "Total IR Found: " << cnt_ir << endl;
 
 
     file.close();
@@ -1196,9 +1236,8 @@ int main(int argc, char* argv[]) {
     // Output the contents of the string variable to stdout
     cout << content;
 
-
-    cout << "Search complete!" << endl;
-    cout << "Total IR Found: " << cnt_ir << endl;
+    cout << "--------------------------------" << endl;
+    cout << warn << endl;
 
     free(match_matrix);
     free(seq);

@@ -16,6 +16,7 @@ import {
 	Tabs,
 	Loader,
 } from "@mantine/core";
+import DisplayResult from '../displayResult';
 
 interface Data {
 	id: number;
@@ -87,7 +88,7 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind, onClose }) => {
 		}
 		catch (e) {
 			console.log(e);
-			setInputContent('Opps! Invalid Input File Link!!');
+			setInputContent('Opps! Your network speed may be slow. Please ensure that your internet connection is stable and there are no connectivity issues.');
 		}
 		try {
 			const content = await getFileContent(row.output_file_link);
@@ -95,7 +96,7 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind, onClose }) => {
 		}
 		catch (e) {
 			console.log(e);
-			setOutputContent('Opps! Invalid Output File Link!!');
+			setOutputContent('Opps! Your network speed may be slow. Please ensure that your internet connection is stable and there are no connectivity issues.');
 		}
 
 		// console.log(inputContent);
@@ -220,7 +221,7 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind, onClose }) => {
 				</Tabs.List>
 
 				<Tabs.Panel value="input" pt="xs">
-					{inputContent.length ? (<Code className={classes.code} block>{inputContent}</Code>) :
+					{inputContent.length ? (<DisplayResult code={inputContent} cnt={20} />) :
 						(<div dangerouslySetInnerHTML={{ __html: '<img src="/loading-circle.gif" alt="loading..." />' }}></div>)}
 					{/* <Code className={classes.code} block>{inputContent}</Code> */}
 
@@ -229,7 +230,7 @@ const Result: React.FC<MyComponentProps> = ({ keyToFind, onClose }) => {
 				<Tabs.Panel value="output" pt="xs">
 					{/* <Code className={classes.code} block>{outputContent}</Code> */}
 					{outputContent.length ?
-						(<Code className={classes.code} block>{outputContent}</Code>) :
+						(<DisplayResult code={outputContent} cnt={20} />) :
 						(<div dangerouslySetInnerHTML={{ __html: '<img src="/loading-circle.gif" alt="loading..." />' }}></div>)}
 				</Tabs.Panel>
 
