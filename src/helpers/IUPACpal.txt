@@ -1,27 +1,27 @@
-Sequence name: kalu
-Sequence length is: 10
+Sequence name: sss
+Sequence length is: 6
 Minimum length of Inverted Repeat is: 2
-Maximum length of Inverted Repeat is: 10
-Maximum gap between elements is: 4
+Maximum length of Inverted Repeat is: 6
+Maximum gap between elements is: 2
 Number of mismatches allowed in IR: 4
 
 
 
 Inverted Repeats:
-1        acg        3
+1        aaa        3
          |||
-10       tgc        8
-(Length = 3, Gap = 4 , Mismatch = 0)
+6        ttt        4
+(Length = 3, Gap = 0 , Mismatch = 0)
 
-4        ac        5
+1        aa        2
          ||
-10       tg        9
-(Length = 2, Gap = 3 , Mismatch = 0)
+5        tt        4
+(Length = 2, Gap = 1 , Mismatch = 0)
 
-7        ac        8
+2        aa        3
          ||
-10       tg        9
-(Length = 2, Gap = 0 , Mismatch = 0)
+6        tt        5
+(Length = 2, Gap = 1 , Mismatch = 0)
 
 
 

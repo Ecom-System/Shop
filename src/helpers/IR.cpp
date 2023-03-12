@@ -719,7 +719,7 @@ int main(int argc, char* argv[]) {
     ///////////////////////
 
     // Check input file exists, exit if it does not
-    if (!exist(input_file.c_str())) { cout << "Error: File '" + input_file + "' not found." << endl; return -1; }
+    if (!exist(input_file.c_str())) { cout << "Error: File '" + input_file + "' not found." << endl; return 0; }
 
     // Read input file
     ifstream input( input_file );
@@ -765,10 +765,10 @@ int main(int argc, char* argv[]) {
     }
 
     // Check if sequence name was found, exit if not
-    if (!found_seq) { cout << "Error: Sequence '" + seq_name + "' not found in your input DNA file." << endl; return -1; }
+    if (!found_seq) { cout << "Error: Sequence '" + seq_name + "' not found in your input DNA file." << endl; return 0; }
 
     //invalid?
-    if (!is_valid_iupac_dna(contents)) { cout << "Error: Provided sequence is not a valid IUPAC-encoded DNA." << endl; return -1; }
+    if (!is_valid_iupac_dna(contents)) { cout << "Error: Provided sequence is not a valid IUPAC-encoded DNA." << endl; return 0; }
 
     long int n = contents.length();
     unsigned char * seq = ( unsigned char* ) malloc( ( n ) * sizeof( unsigned char ) );

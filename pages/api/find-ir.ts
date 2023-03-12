@@ -1,8 +1,7 @@
-import { basePath } from './../../src/helpers/projectDirectory';
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { exec } from 'child_process';
-import { performance } from 'perf_hooks';
+import path from 'path';
 
 export type Data = {
 	dnaSequence: string;
@@ -32,9 +31,10 @@ export default async function handler(
 
 				// Set the maxBuffer option to 1GB (1000 * 1000 * 1000 bytes)
 				const options = { maxBuffer: 1000 * 1000 * 1000 };
-				const in_path = basePath + "\\src\\helpers\\input.txt";
-				const out_path = basePath + "\\src\\helpers\\IUPACpal.txt";
-				const command = basePath + `\\src\\helpers\\IR.exe -s ${name} -g ${maxGap} -x ${maxMismatch} -m ${minLen} -M ${maxLen} -f ${in_path} -o ${out_path}`;
+				const in_path = path.join(process.cwd(), 'src', 'helpers', 'input.txt');
+				const out_path = path.join(process.cwd(), 'src', 'helpers', 'IUPACpal.txt');
+				const irPath = path.join(process.cwd(), 'src', 'helpers', 'IR.exe');
+				const command = irPath + ` -s ${name} -g ${maxGap} -x ${maxMismatch} -m ${minLen} -M ${maxLen} -f ${in_path} -o ${out_path}`;
 				exec(command, options, (error, stdout, stderr) => {
 
 					if (error) {

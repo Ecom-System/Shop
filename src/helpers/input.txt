@@ -1,2 +1,2 @@
->kalu
-ACGACTACGT
+>sss
+AAATTT

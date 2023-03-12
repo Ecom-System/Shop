@@ -17,7 +17,6 @@ import { Data } from "pages/api/find-ir";
 import axios from 'axios';
 import styles from "../../../styles/toggle.module.css";
 import { uploadFileCallBack } from "src/helpers/uploadHelper";
-import { basePath } from "src/helpers/projectDirectory";
 import { Card } from '@mantine/core';
 import DisplayResult from "../displayResult";
 
@@ -206,7 +205,6 @@ export function IRForm() {
 
 				let fileName = generateName(finalValues.name, finalValues.maxMismatch, finalValues.maxGap, finalValues.minLen, finalValues.maxLen);
 
-				var filePath = basePath + "\\src\\helpers";
 				var file = new File([output], 'IUPACpal.txt');
 
 				try {
