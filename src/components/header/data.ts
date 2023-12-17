@@ -6,29 +6,54 @@ const links = [{
 	"label": "Home"
 },
 {
-	"link": "/background",
-	"label": "Background"
+	"link": "/dashboard",
+	"label": "Dashboard"
 },
 {
-	"link": "/findIR",
-	"label": "Find IR"
+	"link": "/login",
+	"label": "Login"
 },
 {
-	"link": "/library",
-	"label": "Library"
-},
-{
-	"link": "/search",
-	"label": "Search"
-	// },
-	// {
-	// 	"link": "/admin-mt19937/login",
-	// 	"label": "Admin Login"
-},
-{
-	"link": "/admin-mt19937/logout",
-	"label": "Logout"
-},
+	"link": "/register",
+	"label": "Register"
+}
 ]
 
-export { HEADER_HEIGHT, links }
+
+const supplier = [
+{
+	"link": "/supplies",
+	"label": "Supplies"
+},
+{
+	"link": "/logout",
+	"label": "Logout"
+}
+]
+
+
+const links_user = [
+{
+	"link": "/",
+	"label": "Home"
+},
+{
+	"link": "/dashboard",
+	"label": "Dashboard"
+},
+{	
+	"link": "/account",
+	"label": "Account"
+},
+{
+	"link": "/cart",
+	"label": "Cart"
+},
+
+{
+	"link": "/logout",
+	"label": "Logout"
+}
+]
+
+export { HEADER_HEIGHT, links, links_user , supplier}

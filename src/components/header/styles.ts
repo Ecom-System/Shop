@@ -6,7 +6,7 @@ const useStyles = createStyles((theme) => ({
 	root: {
 		position: 'relative',
 		color: theme.white,
-		backgroundColor: "#a7d489",
+		backgroundColor: "#17594A",
 		marginBottom: '10px',
 	},
 
@@ -60,8 +60,8 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 600,
 
 		'&:hover': {
-			color: '#737373',
-			backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+			color: '#394867',
+			backgroundColor: '#8EAC50',
 		},
 
 		[theme.fn.smallerThan('sm')]: {
@@ -72,10 +72,14 @@ const useStyles = createStyles((theme) => ({
 
 	linkActive: {
 		'&, &:hover': {
-			backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
-			color: "#000000",
+			backgroundColor: '#D3D04F',
+			color: "#394867",
 		},
 	},
+	pp : {
+		fontFamily : 'Edo',
+		color : '#ffffff',
+	}
 }));
 
 export default useStyles;

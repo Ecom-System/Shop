@@ -1,15 +1,27 @@
 import '../styles/globals.css'
+import { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app'
 import Layout from 'src/components/layout'
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 
 export default function App({ Component, pageProps }: AppProps) {
-	return <MantineProvider withNormalizeCSS withGlobalStyles>
+
+	const [ssr, setSsr] = useState(true);
+	useEffect(() => {
+		setSsr(false);
+	  },[]);
+	
+	if(ssr === true) {
+		return null;
+	}
+	else {
+		return <MantineProvider withNormalizeCSS withGlobalStyles>
 		<NotificationsProvider>
 			<Layout> <Component {...pageProps} /></Layout>
 		</NotificationsProvider>
 	</MantineProvider>
+	}
 }
 
 
